@@ -2,6 +2,18 @@
 #include <cmath>
 #include <climits>
 
+bool cinChecker(bool x) {
+  std::cin.clear();
+  std::cin.ignore(INT_MAX, '\n');
+  if(x) {
+    std::cout << "Why are you feeding me garbage?" << std::endl;
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+
 void multiply(double a, double b) {
   // Multiply two numbers and return the output
   std::cout << "The answer to " << a << " * " << b
@@ -39,17 +51,43 @@ void solveQuadraticEquation(double a, double b, double c) {
 	    << "x = " << (-b-sqrt(pow(b,2)-4*a*c))/(2*a) << std::endl;
 }
 
-bool cinChecker(bool x) {
-  std::cin.clear();
-  std::cin.ignore(INT_MAX, '\n');
-  if(x) {
-    std::cout << "Why are you feeding me garbage?" << std::endl;
+void threeVectorLength(double x, double y, double z) {
+  std::cout << "The length of the three vector (" << x << "," << y << "," << z << ") is "
+	    << sqrt(pow(x,2) + pow(y,2) + pow(z,2)) << std::endl;
+}
+
+bool fourVectorLength() {
+  double t, x, y, z;
+  std::cout << "What is the time coordinate? ";
+  std::cin >> t;
+  if(cinChecker(!std::cin)) {
     return 1;
   }
-  else {
-    return 0;
+
+  std::cout << "What is the x coordinate? ";
+  std::cin >> x;
+  if(cinChecker(!std::cin)) {
+    return 1;
   }
+
+  std::cout << "What is the y coordinate? ";
+  std::cin >> y;
+  if(cinChecker(!std::cin)) {
+    return 1;
+  }
+
+  std::cout << "What is the z coordinate? ";
+  std::cin >> z;
+  if(cinChecker(!std::cin)) {
+    return 1;
+  }
+  
+  std::cout << "The length of the four vector (" << t << "," << x << "," << y << "," << z << ") is "
+	    << sqrt(-pow(t,2) + pow(x,2) + pow(y,2) + pow(z,2)) << std::endl;
+
+  return 0;
 }
+
 
 bool oneFunctionToRuleThemAll(void (*func)(double,double)) {
   // This function prompts the user for variables to put into func(double,double)
@@ -128,6 +166,12 @@ int main(int argc, char *argv[]) {
     }
     else if(decision == 'q') {
       oneFunctionToRuleThemAll(&solveQuadraticEquation);
+    }
+    else if(decision == 't') {
+      oneFunctionToRuleThemAll(&threeVectorLength);
+    }
+    else if(decision == 'f') {
+      fourVectorLength();
     }
     else {
       std::cout << "I did not understand your input." << std::endl;
