@@ -55,8 +55,12 @@ bool oneFunctionToRuleThemAll(double (*func)(double,double), char operatorChar) 
 }
 
 
+
 int main(int argc, char *argv[]) {
   char decision = 'n';
+  char userWantsToStay = 'y';
+
+  do {
 
   std::cout << "What operation would you like to perform? ";
   std::cin >> decision;
@@ -76,6 +80,13 @@ int main(int argc, char *argv[]) {
   else {
     std::cout << "I did not understand your input. Goodbye!" << std::endl;
   }
-  
+
+  do {
+    std::cout << "Do you want to do another calculation(y/n)? ";
+    std::cin >> userWantsToStay;
+  } while(userWantsToStay != 'y' && userWantsToStay != 'n');
+    
+  } while(userWantsToStay == 'y');
+    
   return 0;
 }
