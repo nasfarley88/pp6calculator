@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
   std::cout << "What operation would you like to perform? ";
   std::cin >> decision;
 
-  if(decision = 'm') {
+  if(decision == 'm') {
     double a, b;
     
     std::cout << "What is the first number you wish to muptiply? ";
@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 
   }
   else {
-    std::cout << "I did not understand your input. Goodbye!";
+    std::cout << "I did not understand your input. Goodbye!" << std::endl;
   }
   
   return 0;
