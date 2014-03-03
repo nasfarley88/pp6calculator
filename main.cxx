@@ -27,6 +27,8 @@ int main(int argc, char *argv[]) {
   std::cout << "What operation would you like to perform? ";
   std::cin >> decision;
 
+  // TODO make it so that I can call a function from the
+  // function. Yeah. Function pointers?
   if(decision == 'm') {
     double a, b;
     
@@ -37,7 +39,7 @@ int main(int argc, char *argv[]) {
     std::cin >> b;
 
     std::cout << "The answer to " << a << "*" << b << " is " << multiply(a,b)
-	      << std:endl;
+	      << std::endl;
 
   }
   else {
