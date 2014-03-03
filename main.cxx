@@ -5,6 +5,21 @@ double multiply(double a, double b) {
   // Multiply two numbers and return the output
   return a*b;
 }
+
+double divide(double a, double b) {
+  // Divide two numbers and return the output
+  return a/b;
+}
+
+double add(double a, double b) {
+  // Add two numbers and return the output
+  return a+b;
+}
+
+double subtract(double a, double b) {
+  // Subtract two numbers and return the output
+  return a-b;
+}
   
 int main(int argc, char *argv[]) {
   char decision = 'n';
@@ -21,7 +36,8 @@ int main(int argc, char *argv[]) {
     std::cout << "What is the second number you wish to muptiply? ";
     std::cin >> b;
 
-    std::cout << "The answer to " << a << "*" << b << " is " << multiply(a,b);
+    std::cout << "The answer to " << a << "*" << b << " is " << multiply(a,b)
+	      << std:endl;
 
   }
   else {
