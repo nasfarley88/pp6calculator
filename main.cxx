@@ -148,7 +148,8 @@ int main(int argc, char *argv[]) {
   char userWantsToStay = 'y';
 
   do {
-
+    bool userTriedToCalculateSomething = true;
+  
     std::cout << "What operation would you like to perform? ";
     std::cin >> decision;
 
@@ -173,12 +174,29 @@ int main(int argc, char *argv[]) {
     else if(decision == 'f') {
       fourVectorLength();
     }
+    else if(decision == 'h') {
+      std::cout << "So you want some help? Here it is. Type any one of these characters to do an operation" << std::endl;
+      std::cout << "m: multiply" << std::endl;
+      std::cout << "s: subtract" << std::endl;
+      std::cout << "a: add" << std::endl;
+      std::cout << "d: divide" << std::endl;
+      std::cout << "q: solve quadratic" << std::endl;
+      std::cout << "t: three vector length" << std::endl;
+      std::cout << "f: four vector length" << std::endl;
+      userTriedToCalculateSomething = false;
+    }
     else {
-      std::cout << "I did not understand your input." << std::endl;
+      std::cout << "I did not understand your input. If you want my help, press 'h' next time." << std::endl;
+      userTriedToCalculateSomething = false;
     }
 
     do {
-      std::cout << "Do you want to do another calculation(y/n)? ";
+      if(userTriedToCalculateSomething) {
+	std::cout << "Do you want to do another calculation(y/n)? ";
+      }
+      else {
+	std::cout << "Do you want another chance to impress me(y/n)?";
+      }
       std::cin >> userWantsToStay;
     } while(userWantsToStay != 'y' && userWantsToStay != 'n');
     
