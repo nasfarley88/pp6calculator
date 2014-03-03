@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 
   }
   else {
-    std::cout << "I did not understand your input. Goodbye!"
+    std::cout << "I did not understand your input. Goodbye!";
   }
   
   return 0;
