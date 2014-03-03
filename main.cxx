@@ -34,9 +34,20 @@ int main(int argc, char *argv[]) {
     
     std::cout << "What is the first number you wish to muptiply? ";
     std::cin >> a;
+    if(!std::cin) {
+      std::cout << "Why are you feeding me garbage?" << std::endl
+		<< "Goodbye." << std::endl;
+      return 1;
+    }
     
     std::cout << "What is the second number you wish to muptiply? ";
     std::cin >> b;
+    if(!std::cin) {
+      std::cout << "Why are you feeding me garbage?" << std::endl
+		<< "Goodbye." << std::endl;
+      return 1;
+    }
+
 
     std::cout << "The answer to " << a << "*" << b << " is " << multiply(a,b)
 	      << std::endl;
