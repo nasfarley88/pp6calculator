@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include <climits>
+#include "ThreeVector.hxx"
+
 
 bool cinChecker(bool x) {
   std::cin.clear();
