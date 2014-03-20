@@ -2,7 +2,7 @@
 #include <cmath>
 #include <climits>
 #include "ThreeVector.hxx"
-
+#include <string>
 
 bool cinChecker(bool x) {
   std::cin.clear();
@@ -143,8 +143,15 @@ bool oneFunctionToRuleThemAll(void (*func)(double,double,double)) {
   return 0;
 }
 
+ThreeVector createThreeVectorFromUserInput(const std::string nth)
+{
+  std::cout << "Enter the x, y, and z coordnates of the " << nth << "vector" << std::endl;
+  double xa,ya,za;
+  std::cin >> xa >> ya >> za;
+  return ThreeVector(xa,ya,za);
 
 
+}
 int main(int argc, char *argv[]) {
   char decision = 'n';
   char userWantsToStay = 'y';
@@ -152,55 +159,63 @@ int main(int argc, char *argv[]) {
   do {
     bool userTriedToCalculateSomething = true;
   
-    std::cout << "What operation would you like to perform? ";
+    std::cout << "What operation would you like to perform? " << std::endl;
+    std::cout << "Operations available are:" << std::endl
+	      << "1) ThreeVector modulus" << std::endl;
     std::cin >> decision;
 
-    if(decision == 'm') {
-      oneFunctionToRuleThemAll(&multiply);
-    }
-    else if(decision == 's') {
-      oneFunctionToRuleThemAll(&subtract);
-    }
-    else if(decision == 'a') {
-      oneFunctionToRuleThemAll(&add);
-    }
-    else if(decision == 'd') {
-      oneFunctionToRuleThemAll(&divide);
-    }
-    else if(decision == 'q') {
-      oneFunctionToRuleThemAll(&solveQuadraticEquation);
-    }
-    else if(decision == 't') {
-      oneFunctionToRuleThemAll(&threeVectorLength);
-    }
-    else if(decision == 'f') {
-      fourVectorLength();
-    }
-    else if(decision == 'h') {
-      std::cout << "So you want some help? Here it is. Type any one of these characters to do an operation" << std::endl;
-      std::cout << "m: multiply" << std::endl;
-      std::cout << "s: subtract" << std::endl;
-      std::cout << "a: add" << std::endl;
-      std::cout << "d: divide" << std::endl;
-      std::cout << "q: solve quadratic" << std::endl;
-      std::cout << "t: three vector length" << std::endl;
-      std::cout << "f: four vector length" << std::endl;
-      userTriedToCalculateSomething = false;
-    }
-    else {
-      std::cout << "I did not understand your input. If you want my help, press 'h' next time." << std::endl;
-      userTriedToCalculateSomething = false;
-    }
+    if(decision == '1')
+      {
+	ThreeVector a = createThreeVectorFromUserInput("first");
+	std::cout << "The modulus of a is " << a.modulus() << std::endl;
+      }
 
-    do {
-      if(userTriedToCalculateSomething) {
-	std::cout << "Do you want to do another calculation(y/n)? ";
-      }
-      else {
-	std::cout << "Do you want another chance to impress me(y/n)?";
-      }
-      std::cin >> userWantsToStay;
-    } while(userWantsToStay != 'y' && userWantsToStay != 'n');
+    // if(decision == 'm') {
+    //   oneFunctionToRuleThemAll(&multiply);
+    // }
+    // else if(decision == 's') {
+    //   oneFunctionToRuleThemAll(&subtract);
+    // }
+    // else if(decision == 'a') {
+    //   oneFunctionToRuleThemAll(&add);
+    // }
+    // else if(decision == 'd') {
+    //   oneFunctionToRuleThemAll(&divide);
+    // }
+    // else if(decision == 'q') {
+    //   oneFunctionToRuleThemAll(&solveQuadraticEquation);
+    // }
+    // else if(decision == 't') {
+    //   oneFunctionToRuleThemAll(&threeVectorLength);
+    // }
+    // else if(decision == 'f') {
+    //   fourVectorLength();
+    // }
+    // else if(decision == 'h') {
+    //   std::cout << "So you want some help? Here it is. Type any one of these characters to do an operation" << std::endl;
+    //   std::cout << "m: multiply" << std::endl;
+    //   std::cout << "s: subtract" << std::endl;
+    //   std::cout << "a: add" << std::endl;
+    //   std::cout << "d: divide" << std::endl;
+    //   std::cout << "q: solve quadratic" << std::endl;
+    //   std::cout << "t: three vector length" << std::endl;
+    //   std::cout << "f: four vector length" << std::endl;
+    //   userTriedToCalculateSomething = false;
+    // }
+    // else {
+    //   std::cout << "I did not understand your input. If you want my help, press 'h' next time." << std::endl;
+    //   userTriedToCalculateSomething = false;
+    // }
+
+    // do {
+    //   if(userTriedToCalculateSomething) {
+    // 	std::cout << "Do you want to do another calculation(y/n)? ";
+    //   }
+    //   else {
+    // 	std::cout << "Do you want another chance to impress me(y/n)?";
+    //   }
+    //   std::cin >> userWantsToStay;
+    // } while(userWantsToStay != 'y' && userWantsToStay != 'n');
     
   } while(userWantsToStay == 'y');
     
