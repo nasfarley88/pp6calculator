@@ -1,4 +1,4 @@
-#include "Threevector.hxx"
+#include "Threevector.h"
 #include <cmath>
 #include <iostream>
 

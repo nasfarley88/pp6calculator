@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <climits>
-#include "ThreeVector.hxx"
+#include "ThreeVector.h"
 #include <string>
 
 bool cinChecker(bool x) {

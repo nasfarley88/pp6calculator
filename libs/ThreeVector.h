@@ -1,5 +1,5 @@
-#ifndef THREEVECTOR_HXX
-#define THREEVECTOR_HXX
+#ifndef THREEVECTOR_H
+#define THREEVECTOR_H
 
 class ThreeVector
 {
@@ -25,4 +25,4 @@ public:
 };
 
 #else
-#endif // THREEVECTOR_HXX
+#endif // THREEVECTOR_H

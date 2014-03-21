@@ -22,7 +22,7 @@ add_subdirectory(libs)
 # add_subdirectory(FileReader)
 
 # - Add the pp6calculator program
-add_executable(pp6calculator main.cxx)
+add_executable(pp6calculator main.cpp)
 
 # - Link pp6calculator to pp6lib and FileReader library
 target_link_libraries(pp6calculator libs)
