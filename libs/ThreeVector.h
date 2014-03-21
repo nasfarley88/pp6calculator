@@ -10,6 +10,8 @@ public:
   { x_ = 0; y_ = 0; z_ = 0;}
   ThreeVector(double x,double y,double z)
     : x_(x), y_(y), z_(z) {};
+  // TODO add copy constructor
+  // TODO add destructor
   double modulus();
   double norm() { return this->modulus(); }
   ThreeVector crossWith(ThreeVector);
@@ -19,9 +21,9 @@ public:
   double getx(){ return x_; }
   double gety(){ return y_; }
   double getz(){ return z_; }
-  // double setx(double x): {};
-  // double sety(double y): {};
-  // double setz(double z): {};
+  double setx(double x) { x_ = x; }
+  double sety(double y) { y_ = y; }
+  double setz(double z) { z_ = z; }
 };
 
 #else

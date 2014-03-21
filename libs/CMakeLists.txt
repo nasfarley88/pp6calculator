@@ -2,6 +2,8 @@
 #
 add_library(libs STATIC 
   ThreeVector.cpp
-  ThreeVector.hpp
+  ThreeVector.h
+  FourVector.cpp
+  FourVector.h
   )
 

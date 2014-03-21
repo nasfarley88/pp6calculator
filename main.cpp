@@ -2,6 +2,7 @@
 #include <cmath>
 #include <climits>
 #include "ThreeVector.h"
+#include "FourVector.h"
 #include <string>
 
 bool cinChecker(bool x) {
