@@ -1,4 +1,5 @@
 #ifndef THREEVECTOR_HXX
+#define THREEVECTOR_HXX
 
 class ThreeVector
 {
@@ -13,6 +14,14 @@ public:
   double norm() { return this->modulus(); }
   ThreeVector crossWith(ThreeVector);
   ThreeVector dotWith(ThreeVector);
+
+  // get and set functions
+  double getx(){ return x_; }
+  double gety(){ return y_; }
+  double getz(){ return z_; }
+  // double setx(double x): {};
+  // double sety(double y): {};
+  // double setz(double z): {};
 };
 
 #else

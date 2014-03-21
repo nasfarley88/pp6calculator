@@ -218,6 +218,5 @@ int main(int argc, char *argv[]) {
     // } while(userWantsToStay != 'y' && userWantsToStay != 'n');
     
   } while(userWantsToStay == 'y');
-    
   return 0;
 }
