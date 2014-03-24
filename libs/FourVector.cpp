@@ -14,6 +14,10 @@ double innerProduct(const FourVector a, const FourVector b, const std::string me
     {
       return - a.gett()*b.gett() + a.getx()*b.getx() + a.gety()*b.gety() + a.getz()*b.getz();
     }
+  else {
+    // Signal there's an error, an inner product should never be negative
+    return -1;
+  }
 }
 
 double innerProduct(const FourVector a, const FourVector b)
