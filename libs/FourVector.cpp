@@ -4,7 +4,7 @@
 #include <string>
 
 
-double innerProduct(const FourVector a, const FourVector b, const string metric)
+double innerProduct(const FourVector a, const FourVector b, const std::string metric) 
 {
   if(metric=="+---")
     {
@@ -21,8 +21,13 @@ double innerProduct(const FourVector a, const FourVector b)
   return innerProduct(a,b,"-+++");
 }
 
-double FourVector::norm(string metric)
+double FourVector::norm()
 {
   // TODO add support for complex numbers
   return sqrt(innerProduct(*this,*this));
+}
+
+double FourVector::normSquared()
+{
+  return innerProduct(*this,*this);
 }
