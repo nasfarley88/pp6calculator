@@ -21,9 +21,9 @@ public:
   double getx(){ return x_; }
   double gety(){ return y_; }
   double getz(){ return z_; }
-  double setx(double x) { x_ = x; }
-  double sety(double y) { y_ = y; }
-  double setz(double z) { z_ = z; }
+  double setx(double x) { x_ = x; return x_; }
+  double sety(double y) { y_ = y; return y_; }
+  double setz(double z) { z_ = z; return z_; }
 };
 
 #else
