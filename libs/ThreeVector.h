@@ -14,8 +14,7 @@ public:
   // TODO add destructor
   double modulus();
   double norm() { return this->modulus(); }
-  ThreeVector crossWith(ThreeVector);
-  ThreeVector dotWith(ThreeVector);
+  // cross and dot (inner) product defined in ThreeVector.cpp
 
   // get and set functions
   double getx(){ return x_; }
