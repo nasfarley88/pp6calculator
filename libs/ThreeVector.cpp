@@ -16,7 +16,7 @@ ThreeVector cross(ThreeVector a, ThreeVector b)
 
 double innerProduct(ThreeVector a, ThreeVector b)
 {
-  return a.getx()*b.getx()+a.gety()*b.gety()+a.getz()*b.getz()
+  return a.getx()*b.getx()+a.gety()*b.gety()+a.getz()*b.getz();
 }
 
 double dot(ThreeVector a, ThreeVector b)
